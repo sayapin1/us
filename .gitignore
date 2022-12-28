@@ -1,10 +1,9 @@
 node_modules
 .env
-<<<<<<< Updated upstream
+
 package-lock.json
 package.json
 config
-=======
-config
+
 .idea
->>>>>>> Stashed changes
+

@@ -1,12 +1,9 @@
 const express = require("express");
 const app = express();
 
-<<<<<<< Updated upstream
-=======
 const loginRouter = require('./routers/login.js')
 const registerRouter = require("./routers/register")
 
->>>>>>> Stashed changes
 app.use(express.json());
 
 app.use("/register", registerRouter);
