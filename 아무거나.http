@@ -1,4 +1,4 @@
-###
+###로그인
 POST localhost:8080/api/login
 Content-Type: application/json
 
@@ -7,19 +7,19 @@ Content-Type: application/json
   "password": "sssss"
 }
 
-###
+###게시글상세조회
 GET localhost:8080/api/posts/2;
 
-###
+###게시글작성
 POST localhost:8080/api/posts
 Content-Type: application/json
 
 {
-  "title": "",
-  "content": ""
+  "title": "아무내용",
+  "content": "ㄴㄴㄴ"
 }
 
-###
+###게시글 수정
 PUT localhost:8080/api/posts/5
 Content-Type: application/json
 
@@ -28,5 +28,34 @@ Content-Type: application/json
   "content": ""
 }
 
+###게시글 삭제
+DELETE localhost:8080/api/posts/7
+
 ###
-DELETE localhost:8080/api/posts/5
+GET localhost:8080/api/posts/2/comments
+
+###댓글 작성
+POST localhost:8080/api/posts/7/comments
+Content-Type: application/json
+
+{
+  "content": "sssss"
+}
+
+###댓글 수정
+PUT localhost:8080/api/posts/2/comments/2
+Content-Type: application/json
+
+{
+  "content": "역시 정훈님!"
+}
+
+###댓글 삭제
+DELETE localhost:8080/api/posts/2/comments/2
+
+###좋아요
+PUT localhost:8080/api/posts/1/like
+
+###좋아요한 게시글 조회
+GET localhost:8080/api/likes/posts
+

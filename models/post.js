@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       models.Post.belongsTo(models.User, { foreignKey: "user_id" });
     }
   }
+
   Post.init(
     {
       postId: {
@@ -22,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       user_id: DataTypes.INTEGER,
       title: DataTypes.STRING,
       content: DataTypes.STRING,
+      like_cnt: DataTypes.INTEGER,
     },
     {
       sequelize,

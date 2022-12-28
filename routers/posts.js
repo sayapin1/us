@@ -106,7 +106,9 @@ router.delete("/posts/:postId", authMiddleWare, async (req, res) => {
       where: { postId },
     });
     // 게시글에 속한 댓글들 삭제
-    // const comments = await Comment.destroy({ postId });
+    await Comment.destroy({
+      where: { post_id: postId },
+    });
 
     // console.log(comments);
 
