@@ -3,7 +3,7 @@ const router = express.Router();
 const {Op} = require('sequelize');
 const {User} = require('../models');
 
-router.post('/users', async (req, res) => {
+router.post('/register', async (req, res) => {
     const {nickname, password, confirmpw} = req.body;
     console.log(nickname)
     console.log(password)
