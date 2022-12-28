@@ -22,9 +22,13 @@ router.post("/login", async (req, res) => {
         .send({ errorMessage: "닉네임 또는 패스워드를 확인해주세요." });
     }
 
-    const token = jwt.sign({ nickname: nickname }, SECRET_KEY, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign(
+      { nickname: nickname, userId: user.userId },
+      SECRET_KEY,
+      {
+        expiresIn: "1h",
+      }
+    );
 
     res.cookie("token", token);
 

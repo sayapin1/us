@@ -3,7 +3,8 @@ const { User } = require("../models");
 const SECRET_KEY = "1234";
 
 module.exports = (req, res, next) => {
-  const { token } = req.cookies;
+  const token = req.headers.cookie.split("=")[1];
+  console.log(req.headers);
 
   if (!token) {
     res.status(401).send({
@@ -13,8 +14,8 @@ module.exports = (req, res, next) => {
   }
 
   try {
-    const { nickname } = jwt.verify(token, SECRET_KEY);
-    User.findByPk(nickname).then((user) => {
+    const { userId } = jwt.verify(token, SECRET_KEY);
+    User.findByPk(userId).then((user) => {
       res.locals.user = user;
       return next();
     });

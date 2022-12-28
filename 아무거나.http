@@ -1,0 +1,32 @@
+###
+POST localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "nickname": "pppp",
+  "password": "sssss"
+}
+
+###
+GET localhost:8080/api/posts/2;
+
+###
+POST localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "title": "",
+  "content": ""
+}
+
+###
+PUT localhost:8080/api/posts/5
+Content-Type: application/json
+
+{
+  "title": "",
+  "content": ""
+}
+
+###
+DELETE localhost:8080/api/posts/5
